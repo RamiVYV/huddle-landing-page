@@ -1,0 +1,159 @@
+/* -----------------------------FONTS----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+/* - [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/) */
+/* -----------------------------VAR ---------------- */
+
+:root{
+--Violet: hsl(257, 40%, 49%);
+--Soft_Magenta: hsl(300, 69%, 71%);
+--Open-Sanz:'Open Sans', sans-serif;
+--Poppins:'Poppins', sans-serif;
+--White:hsl(0, 0%, 100%);
+}
+/* -----------------------------ALL------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+body{
+    font-family:var(--Open-Sanz);
+    font-weight: 400;
+    background-image: url(../img/bg-mobile.svg);
+    background-color: var(--Violet);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem;   
+    font-size: 16px;
+}
+.card{
+    display: grid;
+    grid-template-areas: 
+                        ". top . "
+                        ". bottom ."
+                        ". bottom ."
+    ;
+    grid-template-columns:  1fr 375px 1fr;
+    grid-template-rows: 24rem ;
+    padding: 2.5rem;
+}
+/* -----------------------------SECTION-I------------- */
+.card_top{
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+.card__top--logo{
+    width: 40%;
+    height:5rem;
+}
+.card__top--main-img{
+    object-fit: cover;
+    width: 100%;
+}
+
+/* -----------------------------SECTION.II------------ */
+.card__bottom{
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+.card__bottom--title{
+    color: var(--White);
+    font-size: 2rem;
+    font-family: var(--Poppins);
+    font-weight: 600;
+    text-align: center;
+}
+.card__bottom--description{
+    text-align: center;
+    color: var(--White);
+    font-family: var(--Poppins);
+    font-weight: 400;
+}
+.card__bottom--register{
+    width: 14rem;
+    height: 3.5rem;
+    border-style: none;
+    border-radius: 1.5rem;
+    background-color: var(--White);
+    color: var(--Violet);
+    font-family: var(--Poppins);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem; 
+}
+.card__bottom--register:hover{
+    background-color: var(--Soft_Magenta);
+    cursor: pointer;}
+.card__bottom__socialNetworks{
+    width: 14rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+.svg{
+    height: 100%;
+    width: 25%;
+    border: 8px solid var(--White);
+    border-radius: 50%;
+    background-color: var(--White);
+}
+.svg:hover{
+    background-color: var(--Soft_Magenta);
+    cursor: pointer;
+    border: 8px solid var(--Soft_Magenta);
+}
+/* ---------------------@QUERY------------------------ */
+@media(min-width:1330px){
+    body{
+        background-image: url(../img/bg-desktop.svg);
+        padding: 0;    
+    }
+    
+    .card{
+        grid-template-areas: 
+                            ". top bottom ."
+                            ". top bottom ."
+                            
+        ;
+        grid-template-columns:  1fr 40rem 40rem 1fr;
+        /* grid-template-rows: 300px; */
+        /* padding: 2.5rem; */
+    }
+    .card__bottom--description{
+        text-align: justify;
+    }
+    .card__bottom--title{
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .card__bottom{
+        margin-left:5rem;
+        /* margin-top: 8rem; */
+        justify-content: center;
+        gap: .5rem;
+        font-size: 1.5rem;
+        align-items:flex-start;
+        text-align: left;
+}
+    .card__bottom__socialNetworks{
+   
+    align-items: flex-end;
+    }
+    .card__bottom--register{
+        margin: 3rem 0;
+    }
+}
+/* -----------------------------FOOTER---------------- */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
